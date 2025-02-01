@@ -1,0 +1,1017 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Tajawal", serif;
+}
+
+body {
+  perspective: 700px;
+}
+
+html {
+  direction: rtl;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Playwrite+AU+VIC+Guides&display=swap");
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #240046;
+  gap: 320px;
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo .p1 {
+  font-size: 25px;
+  font-family: "cairo";
+  font-weight: bold;
+  color: white;
+}
+
+.logo .p2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #ff9e00;
+  font-family: "cairo";
+  margin-left: 5px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.menu_items .menu_item {
+  font-family: "cairo";
+  font-size: 15px;
+  color: white;
+  position: relative;
+  padding: 5px;
+}
+.menu_items .menu_item:hover {
+  color: #ff9e00;
+}
+
+.menu_items .menu_item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  border-left: #ff9e00 1px solid;
+  border-right: #ff9e00 1px solid;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+.menu_items .menu_item::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  border-top: #ff9e00 1px solid;
+  border-bottom: #ff9e00 1px solid;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+
+.menu_items li:hover::after {
+  width: 100%;
+
+  visibility: visible;
+}
+.menu_items li:hover::before {
+  height: 100%;
+  visibility: visible;
+}
+
+.list_left_title_line,
+.list_right_title_line {
+  background-color: #ff9e00;
+  width: 100%;
+  height: 1px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons i {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.icons i:hover {
+  color: #ff9e00;
+}
+.sections_list {
+  position: relative;
+}
+
+.drop_list {
+  position: absolute;
+  transform: scale(0);
+  padding: 10px;
+  top: 40px;
+  right: -70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+  background-color: #240046;
+  border: 1px solid #ff9e00;
+  border-radius: 10px;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  padding: 20px;
+}
+.drop_list li {
+  list-style-type: none;
+  color: white;
+  font-family: "cairo";
+  transform: scale(1);
+  transition: all 0.55s;
+  white-space: nowrap;
+}
+.drop_list .drop_list_item:hover {
+  color: #ff9e00;
+  transform: scale(1.2);
+}
+
+.sections_list:hover .drop_list {
+  transform: scale(1);
+  opacity: 1;
+}
+.cart_icon {
+  position: relative;
+}
+
+.cart_number {
+  width: 17px;
+  height: 17px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+.cart:hover .cart_number {
+  top: 1px;
+}
+
+.list_left,
+.list_right {
+  /* width: 150px;
+    height: 270px; */
+}
+
+.list_left_title,
+.list_right_title {
+  display: inline-block;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.sales {
+  background-color: black;
+  height: 35px;
+}
+
+.sales p {
+  text-align: center;
+  font-family: "cairo";
+  color: white;
+}
+
+.sales a {
+  margin-right: 5px;
+  color: #ff9e00;
+  text-decoration: none;
+  font-family: "cairo";
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ff9e00;
+  transition: letter-spacing 0.8s;
+}
+
+.sales a:hover {
+  letter-spacing: 2px;
+}
+.sales a:hover .link-line {
+  width: 70px;
+}
+
+.link-line {
+  width: 65px;
+  height: 1px;
+  margin-right: 940px;
+  background-color: #ff9e00;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/main7.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main_content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+  align-items: center;
+  line-height: 50px;
+}
+
+.main_content_title {
+  font-size: 25px;
+  color: #240046;
+}
+
+.main_content_sentence {
+  font-size: 30px;
+  color: #240046;
+  font-family: "Tajawal", serif;
+  font-weight: 600;
+}
+
+.main_content_descreption {
+  width: 450px;
+  text-align: center;
+  color: #240046;
+  font-family: "Tajawal", serif;
+  font-weight: 500;
+}
+
+.main_content_btn {
+  width: 200px;
+  height: 50px;
+  background-color: #240046;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.main_content_btn:hover {
+  background-color: white;
+  border: 1px solid #240046;
+}
+.main_content_btn:hover a {
+  color: #240046;
+}
+
+.main_content_btn a {
+  font-weight: 200;
+
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Tajawal", serif;
+  font-weight: bold;
+}
+
+/*sections*/
+.books_sections {
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.book_section {
+  width: 350px;
+  height: 400px;
+  background-size: 100% 100%;
+  position: relative;
+  transition: 1s;
+}
+
+.book_section1 {
+  background-image: url("/images/علم\ الاجتماع.jpg");
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.book_section2 {
+  background-image: url("/images/علم\ النفس.jpg");
+
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.book_section3 {
+  background-image: url("/images/programmer.jpg");
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.book_section img {
+  width: 300px;
+  height: 400px;
+}
+
+.book_section_text {
+  background-image: linear-gradient(
+    to top,
+    rgb(0, 0, 0),
+    rgba(255, 255, 255, 0)
+  );
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.book_section_text a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-family: "cairo";
+}
+
+.section_title {
+  margin-top: 60px;
+  font-size: 25px;
+  color: white;
+  transition: 1s;
+}
+.book_section:hover .section_title {
+  margin-top: 0px;
+}
+.book_section:hover {
+  background-size: 120% 120%;
+}
+
+.section_link_line {
+  width: 60px;
+  height: 1px;
+  margin-right: 145px;
+  background-color: white;
+}
+
+.latest {
+}
+
+.latest_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.latest_header_wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 100px;
+}
+.latest_header_line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.latest_title {
+  font-size: 25px;
+  color: #240046;
+}
+
+.sections ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  gap: 50px;
+}
+
+.sections ul li {
+  color: #240046;
+  font-size: 17px;
+}
+
+.section_line {
+  width: 100%;
+  height: 6px;
+
+  margin-top: 50px;
+}
+.sections ul .section_focus {
+  color: #ff9e00;
+}
+.section_focus .section_line {
+  background-color: #ff9e00;
+}
+
+/*latest section*/
+.latest_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+
+.latest_book1_img {
+  background-image: url("/images/ليطمئن\ قلبي.jpg");
+  background-size: 100% 100%;
+  width: 300px;
+  height: 450px;
+}
+
+.latest_book2_img {
+  background-image: url("/images/861fe870808af53d092c3e1cf865948a.jpg");
+  background-size: 100% 100%;
+  width: 300px;
+  height: 450px;
+}
+
+.latest_book3_img {
+  background-image: url("/images/الرجل\ النبيل.jpg");
+  background-size: 100% 100%;
+  width: 300px;
+  height: 450px;
+}
+
+.latest_book4_img {
+  background-image: url("/images/images.jpeg");
+  background-size: 100% 100%;
+  width: 300px;
+  height: 450px;
+}
+.latest_book_img {
+  position: relative;
+  overflow: hidden;
+}
+
+.latest_book_img_overlay {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 450px;
+  transition: all 1.3s;
+}
+
+.latest_book_img_overlay .front {
+  width: 300px;
+  height: 450px;
+  position: absolute;
+}
+
+.back_icons {
+  background-color: white;
+  color: #ff9e00;
+  font-size: 20px;
+  top: auto;
+  left: 50%;
+  right: 50%;
+  bottom: 30px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: transform 1s, opacity 1s;
+}
+
+.back_icon {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.back_icon:hover {
+  color: white;
+  background-color: #ff9e00;
+}
+
+.latest_book_img_overlay .back {
+  z-index: 1;
+  padding: 50px;
+  background-color: #240046;
+  backface-visibility: hidden;
+  width: 300px;
+  height: 450px;
+  position: absolute;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.latest_book_img:hover .latest_book_img_overlay {
+  transform: rotateY(180deg);
+}
+.latest_book_img:hover .back_icons {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+@keyframes back_icons {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.latest_book_img_overlay .back .back_title,.like_book_overlay_title {
+  font-family: "Marhey", serif;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.latest_book_img_overlay .back .back_descreption ,.like_book_overlay_descreption{
+  font-family: "Rubik", serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+
+  line-height: 25px;
+}
+
+.latest_book_title ,.like_book_title 
+{
+  text-align: center;
+  font-size: 17px;
+  color: #240046;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.latest_book_price,.like_book_price  {
+  text-align: center;
+  font-size: 17px;
+  color: #240046;
+  margin-top: 10px;
+  font-weight: 300;
+}
+del {
+  margin-left: 20px;
+}
+
+.customer_hr {
+  margin-top: 150px;
+}
+
+.customer_review {
+  background-color: #ece6f0;
+
+  color: #240046;
+  padding: 100px;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer_review_title {
+}
+
+.customer {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.cusomer_review_p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.customer_details {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.customer_img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-image: url("/images/download2.jpeg");
+  background-size: cover;
+}
+
+.customer_name {
+  font-weight: 600;
+}
+
+.customer_jop {
+}
+
+.like {
+  height: 100vh;
+  padding: 0px 100px;
+}
+
+.like_title {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.like_content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like_book {
+}
+
+.like_book_img {
+  width: 300px;
+  height: 450px;
+  background-size: cover;
+  position: relative;
+  transition: 2s;
+  overflow: hidden;
+}
+
+.like_book_img1 {
+  background-image: url("/images/F2P6V1ZXYAAnECR.jpg");
+}
+
+.like_book_img2 {
+  background-image: url("/images/كوني\ صحابية.jpeg");
+}
+
+.like_book_img3 {
+  background-image: url("/images/كتاب\ عندما\ التقيت\ عمر\ بن\ الخطاب\ رضي\ الله\ عنه\ ل\ ادهم\ شرقاوي.jpeg");
+}
+
+.like_book_img4 {
+  background-image: url("/images/كتاب\ نظرية\ الفستق.jpeg");
+}
+
+.like_book_overlay {
+  background-color: #240046;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+
+  position: absolute;
+  top: -100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  transition: top .8s;
+}
+
+@keyframes like_overly {
+  0% {
+    top: -450px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.like_book_icons {
+  background-color: #fff;
+  position: absolute;
+  bottom: 20px;
+  margin-right: 70px;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: transform .8s, opacity .8s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.like_book_icon {
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  transition: 0.5s;
+  color: #ff9e00;
+  cursor: pointer;
+}
+.like_book_icon i {
+  font-size: 25px;
+}
+.like_book_icon:hover {
+  background-color: #ff9e00;
+  color: white;
+}
+.like_book_img:hover .like_book_overlay {
+    top: 0;
+}
+.like_book_img:hover .like_book_icons {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+
+/*latest_news_section*/
+.latest_news_line1 {
+}
+.latest_news_title {
+  font-size: 30px;
+  text-align: center;
+}
+.latest_news {
+  height: auto;
+  padding: 100px;
+  background-color: #ece6f0;
+}
+.latest_news_content {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.latest_news_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.latest_news_item img {
+  width: 300px;
+  height: 400px;
+  transition: all 0.5s;
+}
+
+.latest_news_item_img:hover {
+  transition: 0.5s;
+  transform: scale(1.05, 1.05);
+}
+
+.latest_news_item:hover .news_title {
+  color: #ff9e00;
+}
+.item_category {
+  font-weight: 300;
+
+  margin-top: 10px;
+}
+.news_title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.news_p {
+  width: 280px;
+}
+.latest_news_item a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #240046;
+  text-decoration: none;
+}
+.latest_news_item a:hover {
+  transform: scale(1.03, 1.03);
+}
+.a_line {
+  width: 80px;
+  height: 2px;
+  background-color: #240046;
+}
+
+/*feutures section*/
+.feutures {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+
+.feutures_item {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feutures_icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.icon_1 {
+  color: #6a5d76;
+  transition: 0.5s;
+}
+.icon_2 {
+  color: #240046;
+  margin-top: 17px;
+  transition: 0.5s;
+}
+
+.feutures_icons:hover .icon_1 {
+  transition: 0.5s;
+  transform: translateY(-60px);
+}
+.feutures_icons:hover .icon_2 {
+  transition: 0.5s;
+  transform: translateY(-50px);
+}
+.feutures_item_title {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.feutures_item_describe {
+  font-size: 18px;
+  width: 250px;
+  font-weight: 300;
+  text-align: center;
+}
+/*footer section*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #240046;
+  padding: 100px;
+}
+.subscribe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.subscribe_text {
+}
+.subscribe_title {
+  color: white;
+  font-size: 30px;
+}
+.subscribe_p {
+  color: white;
+}
+.subscribe_email {
+}
+.subscribe_email input {
+  width: 350px;
+  height: 40px;
+}
+.subscribe_email button {
+  width: 100px;
+  height: 40px;
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+.subscribe_icons {
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+  
+}
+.subscribe_icons i{
+  margin-right: 5px;
+}
+.subscribe_email button:hover {
+  transform: scale(1.1, 1.1);
+}
+.subscribe_icons i:hover {
+  color: #ff9e00;
+}
+.footer_line1 {
+  margin-top: 20px;
+}
+.footer_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 40px;
+}
+.footer_logo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.footer_logo .p1 {
+  font-size: 25px;
+  font-family: "cairo";
+  font-weight: bold;
+  color: white;
+}
+.footer_logo .p2 {
+  font-size: 25px;
+  font-weight: bold;
+  color:#ff9e00;
+  font-family: "cairo";
+  margin-left: 5px;
+}
+.footer_menu ul {
+  list-style-type: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  width: 150px;
+}
+.footer_menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  margin-top: 10px;
+}
+.footer_menu a:hover {
+  text-decoration: underline;
+  font-size: 17.5px;
+}
+.footer_menu_title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.footer_p {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  color: white;
+}
+.footer_p i {
+  color: red;
+  font-size: 22px;
+  text-align: center;
+  width: 23px;
+  height: 23px;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-name: heart;
+}
+@keyframes heart {
+  0% {
+    font-size: 22px;
+  }
+
+  50% {
+    font-size: 17px;
+    color: black;
+  }
+
+  100% {
+    font-size: 22px;
+  }
+}
